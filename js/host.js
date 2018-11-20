@@ -4,7 +4,6 @@ var buzzed = false;
 
 $(document).ready(function() {
 
-	dbRef = firebase.database().ref();
 	addEventListener();
 
 });
@@ -19,6 +18,7 @@ function resetContestant() {
 }
 
 function addEventListener() {
+	dbRef = firebase.database().ref();
 	dbRef.on("child_changed", function(data) {
 		contestant_name = data.val();
 		if (contestant_name != "NONE") {
