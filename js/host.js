@@ -4,7 +4,14 @@ var buzzed = false;
 
 $(document).ready(function() {
 
-	addEventListener();
+	dbRef = firebase.database().ref();
+	dbRef.on("child_changed", function(data) {
+		contestant_name = data.val();
+		if (contestant_name != "NONE") {
+			$('#contestant-name-display').html(contestant_name);
+			dbRef.off();
+		}
+	});
 
 });
 
@@ -18,7 +25,6 @@ function resetContestant() {
 }
 
 function addEventListener() {
-	dbRef = firebase.database().ref();
 	dbRef.on("child_changed", function(data) {
 		contestant_name = data.val();
 		if (contestant_name != "NONE") {
