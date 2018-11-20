@@ -8,12 +8,15 @@ $(document).ready(function() {
 	dbRef.on("child_changed", function(data) {
 		contestant_name = data.val();
 		if (contestant_name != "NONE" && $('#contestant-name-display').text()=="") {
-			console.log('trying to replace ' + contestant_name + ' with "' + $('#contestant-name-display').text() + '"');
+			//console.log('trying to replace ' + contestant_name + ' with "' + $('#contestant-name-display').text() + '"');
 			$('#contestant-name-display').html(contestant_name);
 			$('#contestant-name-display').addClass('animate-bg');
+			var audio = new Audio("js/ding.mp3");
+			audio.play();
 		}
 	});
 	resetContestant();
+	$('#reset-button-container').click();
 
 });
 
