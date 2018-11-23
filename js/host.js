@@ -28,3 +28,9 @@ function resetContestant() {
 	    active_contestant: "NONE",
 	});
 }
+
+function changeFontSize(num) {
+	var current_size = $("#contestant-name-display").css('font-size').split('px');
+	console.log(num);
+	$("#contestant-name-display").css('font-size', (parseInt(current_size[0])+num)+'px');
+}

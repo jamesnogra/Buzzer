@@ -64,7 +64,7 @@ html, body {
 	display: flex;
 	justify-content: center; /* align horizontal */
 	align-items: center; /* align vertical */
-	font-size: 48px;
+	font-size: 62px;
 	color: #FFFFFF;
 }
 
@@ -88,4 +88,20 @@ html, body {
 }
 .red-bg {
 	background-color: red;
+}
+
+#change-font-button-container {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	z-index: 20;
+}
+
+.change-font-button {
+	font-size: 32px;
+	background-color: white;
+	float: left;
+	padding: 20px;
+	margin-left: 20px;
+	cursor: pointer;
 }
