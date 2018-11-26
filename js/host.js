@@ -13,6 +13,9 @@ $(document).ready(function() {
 			$('#contestant-name-display').addClass('animate-bg');
 			var audio = new Audio("js/ding.mp3");
 			audio.play();
+		} else if (contestant_name == "NONE") {
+			$('#contestant-name-display').html("");
+			$('#contestant-name-display').removeClass('animate-bg');
 		}
 	});
 	resetContestant();
